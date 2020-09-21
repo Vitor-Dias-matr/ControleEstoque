@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ControleDeEstoque.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Estoque</h1>
+
+<h2>Produtos</h2>
+
+@*<button <a>asp-action="Create" </a>  type="button" class="btn btn-primary">Novo Produto</button>*@
+<hr />
+<a asp-action="Create"> <button type="button" class="btn btn-primary"> Novo Produto </button> </a>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lista in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelLista => lista.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelLista => lista.Preco)
+                </td>
+                <td>
+                   @*<button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete" >Excluir</button>*@
+                    @Html.ActionLink("Deletar", "Delete", new { id = lista.ProdutoId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*<div class="modal" id="modalDelete" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja mesmo excluir esse produto?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+               <button id="#btnConfirmarModal" type="submit" class="btn btn-danger">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+

@@ -1,0 +1,46 @@
+﻿@model ControleDeEstoque.Models.Produto
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletar</h1>
+
+<div class="row">
+    <div class="col-sm-10">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+    <div class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+
+    <div class="col-sm-10">
+        @Html.DisplayFor(model => model.Preco)
+    </div>
+    <div class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Preco)
+    </div>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar Para Lista</a>
+    </form>
+</div>
+
+@*<div class="modal" id="modalDelete" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Deletar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Deseja mesmo deletar esse produto?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
